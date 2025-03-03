@@ -1,0 +1,17 @@
+---
+title: "My Diary"
+layout: "base.njk"
+pagination:
+  data: collections.post
+  size: 10
+  alias: posts
+permalink: "blog/index.html"
+---
+
+<h2>All Diary Entries</h2>
+<ul>
+  {% for post in posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a> ({{ post.date }})</li>
+  {% endfor %}
+</ul>
